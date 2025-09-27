@@ -83,6 +83,8 @@ void setIdt()
   
   /* ADD INITIALIZATION CODE FOR INTERRUPT VECTOR */
   setInterruptHandler(33, keyboard_handler, 0);
+  setInterruptHandler(32, clock_handler, 0);
+
   
   set_idt_reg(&idtR);
 }
@@ -108,4 +110,8 @@ void keyboard_routine(){
       printc_xy(0x00,0x00,'C');
     }
   }
+}
+
+void clock_routine(){
+  zeos_show_clock();
 }

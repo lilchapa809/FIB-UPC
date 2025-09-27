@@ -19,5 +19,7 @@ void setIdt();
 
 //Interruption Handlers
 void keyboard_handler();
+void clock_handler();
+
 
 #endif  /* __INTERRUPT_H__ */
